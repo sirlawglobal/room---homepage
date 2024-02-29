@@ -1,0 +1,392 @@
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&display=swap'); 
+
+
+*,::after,::before{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: League Spartan;
+}
+
+
+.attribution { font-size: 11px; 
+  text-align: center;
+ }
+ 
+ .attribution a { color: hsl(39, 100%, 48%);
+ }
+ .attribution a { color: hsl(39, 100%, 48%);
+ }
+
+.nav-bar {
+position:absolute ;
+top: 0;
+left: 0;
+width: 40%;
+display: flex;
+gap: 40px;
+align-items: center;
+margin-top: 70px;
+margin-left: 50px;
+/* border: 1px solid red; */
+
+}
+
+.nav-bar ul{
+list-style-type: none;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 30px;
+color: white;
+
+
+}
+.nav-bar ul li{
+  padding: 20px 0px 30px;
+}
+
+.nav-bar ul li:hover{
+border-bottom: 2px solid white;
+padding: 20px 0px 28px;
+cursor: pointer;
+}
+
+img[alt=icon-loggo]{
+   padding-bottom: 6px; 
+ } 
+
+img[alt=icon-hamburger]{
+display: none;
+}
+
+
+.Hero-section{
+display: flex;
+align-items: center;
+}
+
+.Hero-section-left{
+flex:2;
+/* background-image: url(images/desktop-image-hero-1.jpg); already use javascripts for it */
+height: 80vh;
+background-repeat: no-repeat;
+background-size: cover;
+background-position: contain;
+padding: 75px 0 0 50px;
+display: none;  /* Hide all slides by default on loading */
+}
+
+.Hero-section-left:first-child {
+display: block; /* Show the first slide initially */
+}
+
+.Hero-section-right{
+flex:1.2 ; 
+height: 80vh;
+padding: 100px 100px 100px 100px;
+color: gray;
+position: relative;/* because of the span image */
+}
+
+.Hero-section-right h1{
+font-size:40px ;
+color: black;
+}
+
+.Hero-section-right-article1 p:not(:last-of-type){
+margin: 30px 0;
+color: gray ;
+line-height: 20px;
+}
+
+.Hero-section-right-article1  p:not(:last-of-type) + p{
+word-spacing: 20px;
+color: black;
+}
+.Hero-section-right-article1  p:not(:last-of-type) + p:hover{
+color: gray;
+cursor: pointer;
+}
+
+.Hero-section-right-article1{
+display: none; /* Hide all slides by default on loading */
+}
+
+.Hero-section-right-article1:first-child {
+display: block; /* Show the first slide initially */
+}
+
+.Hero-section-right span img{
+bottom: 0px;
+position: absolute;
+background-color: black;
+cursor: pointer;
+height: 70px;
+padding: 0 10px;
+}
+
+.Hero-section-right span  img:hover{
+background-color:rgb(61, 60, 60);
+}
+
+.Hero-section-right span  img[alt=icon-next]{
+left: 82px;
+}
+.Hero-section-right span  img[alt=icon-prev]{
+left: 0px;
+}
+
+.article-row{
+display: flex;
+}
+
+.article-row div:nth-child(2){
+padding:45px 38px;
+color: gray ;
+line-height: 20px;
+}
+
+
+.article-row div:nth-child(2) h3{
+font-size: 12px;
+margin-bottom: 20px;
+word-spacing: 16px;
+letter-spacing: 8px;
+color: black !important;
+text-transform: uppercase;
+}
+
+.modal{
+  background-color: rgba(0, 0, 0,0.5);
+  opacity: 0.9;
+  width:100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  display: none;
+}
+
+.mobile-nav{
+display: flex;
+gap: 20px;
+align-items: center;
+background-color: white;
+}
+
+.mobile-nav ul{
+display: flex;
+justify-content: space-between;
+width: 20%;
+align-items: center;
+}
+.mobile-nav ul li{
+list-style-type: none;
+}
+
+.active{
+  /* display: block; */
+  transition: transform 0.001s ease;
+}
+
+/* tablet  view*/
+
+
+@media screen and (min-width: 376px) and  (max-width: 900px){
+
+.Hero-section{
+display:unset;
+padding: none;
+}
+
+#mobile-only{
+  display: none;
+}
+
+.nav-bar ul{
+  gap: 20px;
+
+  }
+
+.Hero-section-left{
+width: 100%;
+}
+
+.Hero-section-right{
+padding: 50px;
+text-align: center;
+}
+
+.Hero-section-right h1{
+  font-size:30px ;
+  color: black;
+  }
+
+.Hero-section-right-article1 p:not(:last-of-type){
+margin: 20px 0 20px 0;
+
+}
+.Hero-section-right span img{
+top: -70px;
+}  
+
+.Hero-section-right span img[alt=icon-next]{
+left: unset;
+right:0px;
+} 
+
+.article-row{
+display: unset;
+}
+
+.article-row div:nth-child(2){
+padding: 40px;
+text-align: center;}
+
+.article-row img{
+width: 80%;
+margin: 0 7%;
+} 
+}
+
+/* mobile view */
+@media screen and (max-width:375px) {
+
+.Hero-section{
+display:unset;
+padding: none;
+}
+
+
+.nav-bar ul {
+display: none;
+}
+
+img[alt=icon-hamburger]{
+display: block;
+padding: unset;
+margin: 0px 40px 0 30px;
+}
+
+.modal{
+  display: none;
+  background-color: unset;
+}
+
+.mobile-nav{
+  /* display:none; */
+  gap: 30px; 
+  align-items: center;
+  padding-left: 10px;
+  height: 27vh;
+  /* background-color: rgb(255, 255, 255); */
+  } 
+
+ 
+  .mobile-nav ul{
+  display: flex;
+ gap: 20px;
+  }
+
+
+.Hero-section-left{
+padding: 35px 0;
+flex: unset;
+height: 80vh;
+}   
+
+.Hero-section-right{
+padding: unset;
+height: unset;
+margin-bottom: 25px;
+/* width: 100%; */
+}
+
+.Hero-section-right-article1{
+padding: 0px 30px; 
+
+}
+
+.Hero-section-right h1{
+width: 100%;
+font-size: 33px;
+margin: 20px 0;
+}
+
+.Hero-section-right-article1 p:not(:last-of-type){
+color: gray ;
+line-height: 20px;
+word-spacing: 10px;
+
+}
+
+.Hero-section-right-article1  p:not(:last-of-type) + p{
+word-spacing: 20px;
+color: rgb(75, 70, 70);
+font-weight: 700;
+}
+
+.Hero-section-right  span img{
+  position: absolute;
+  bottom: unset;
+  top: -60px;
+  height: 40px;
+  right: 0px;
+  }   
+
+.Hero-section-right  span img[alt=icon-prev]{
+left: unset;
+right:40px ;
+}  
+
+.Hero-section-right span img[alt=icon-next] {
+  left: unset;
+}
+
+
+
+/* .Hero-section-right > span img{
+height: 40px;
+}    */
+
+
+
+.article-row{
+display: unset;
+
+}
+
+.article-row img{
+/* margin-top: 35px; */
+width: 100%;}
+
+/* .article-row img:last-of-type{
+margin-top: 10px;} */
+
+.article-row div:nth-child(2) h3{
+/* padding: 45px 38px; */
+color: gray;
+line-height: 20px;
+word-spacing: unset;
+}
+.article-row div:nth-child(2) P{
+/* padding: 45px 38px; */
+line-height: 20px;
+word-spacing:9px;
+font-size: 14x;
+}
+
+.article-row div:nth-child(2){
+padding-bottom: 5px;
+
+} 
+
+
+}  
+
+
+
+
+
+
